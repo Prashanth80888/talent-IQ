@@ -1,0 +1,136 @@
+body{
+ margin:0;
+ background:linear-gradient(135deg,#050816,#0a0f2c);
+ color:white;
+ font-family:Segoe UI;
+ overflow-x:hidden;
+}
+
+/* NAVBAR */
+.navbar{
+ position:fixed;
+ width:100%;
+ display:flex;
+ justify-content:space-between;
+ padding:15px 40px;
+ transition:.4s;
+}
+.navbar.active{
+ background:#000;
+}
+.logo{
+ color:#00f7ff;
+}
+.navLinks li{
+ display:inline;
+ margin:0 20px;
+ cursor:pointer;
+ position:relative;
+}
+.navLinks li:after{
+ content:'';
+ position:absolute;
+ height:2px;
+ width:0;
+ background:#00f7ff;
+ left:0;
+ bottom:-5px;
+ transition:.3s;
+}
+.navLinks li:hover:after{
+ width:100%;
+}
+
+/* HERO */
+.hero{
+ height:100vh;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+ background:radial-gradient(circle at 50% 50%,#0ff1,#000);
+}
+.title{
+ font-size:70px;
+ animation:up 1s ease;
+}
+.subtitle{
+ opacity:.7;
+}
+.cta{
+ padding:12px 30px;
+ background:#00f7ff;
+ border:none;
+ margin-top:20px;
+ box-shadow:0 0 25px #00f7ff;
+ animation:pulse 2s infinite;
+}
+
+/* SPOTLIGHT */
+.spotlight{
+ display:flex;
+ justify-content:center;
+ padding:80px;
+}
+.spotBox{
+ text-align:center;
+ animation:fade 1s;
+}
+.progress{
+ height:4px;
+ background:#00f7ff;
+ animation:load 3s linear infinite;
+}
+
+/* STRIP */
+.strip{
+ overflow:hidden;
+}
+.move{
+ white-space:nowrap;
+ animation:scroll 12s linear infinite;
+}
+
+/* TEST */
+.test{
+ display:flex;
+ justify-content:center;
+ padding:80px;
+}
+.testCard{
+ padding:30px;
+ background:#111;
+ transition:.4s;
+}
+.testCard:hover{
+ transform:scale(1.1);
+}
+.dp{
+ height:60px;
+ width:60px;
+ background:#00f7ff;
+ border-radius:50%;
+}
+
+/* ANIMATION */
+@keyframes up{
+ from{transform:translateY(50px);opacity:0}
+ to{transform:translateY(0);opacity:1}
+}
+@keyframes pulse{
+ 0%{box-shadow:0 0 10px #0ff}
+ 50%{box-shadow:0 0 40px #0ff}
+ 100%{box-shadow:0 0 10px #0ff}
+}
+@keyframes fade{
+ from{opacity:0}
+ to{opacity:1}
+}
+@keyframes load{
+ from{width:0}
+ to{width:100%}
+}
+@keyframes scroll{
+ from{transform:translateX(0)}
+ to{transform:translateX(-50%)}
+}

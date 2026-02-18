@@ -2,10 +2,20 @@ import express from 'express'
 import path from "path"
 import { ENV } from './lib/env.js';
 import { connectDB } from './lib/db.js';
+import cors from 'cors'
+import {serve} from "inngest"
+import { inngest } from './lib/inngest.js';
 
 
 const app=express()
 const __dirname=path.resolve()
+
+
+//middleware
+app.use(express.json({client:inngest, functions}))
+app.use(cors({origin:ENV.CLIENT_URL,credential:true}))
+
+app.use("/api/inngest",serve)
 
 
 app.get('/pvk',(req,res)=>{
